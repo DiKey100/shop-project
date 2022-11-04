@@ -113,30 +113,34 @@ body {
 }
 
 /* search */
+.third-col form {
+    border: 1px #2c71b8 solid;
+    width: 175px;
+    display: flex;
+    align-items: center;
+}
 
 .search-input {
     font-size: 16px;
     line-height: 42px;
-    border: 1px #2c71b8 solid;
-    position: relative;
     background: none;
     text-indent: 14px;
+    width: 136px;
+    border: 0px;
 }
 .search-button {
-    position: absolute;
-    top: 33px;
-    right: 480px;
     background-color: #2c71b8;
     width: 30px;
     height: 30px;
+    position: relative;
+    background-image: url(images/icon_4.png);
+    background-repeat: no-repeat;
+    background-position: 7px 7px;
 }
 .search-logo {
     position: absolute;
     top: calc(50% - 6px);
     left: calc(50% - 7px);
-}
-img.search-logo {
-    vertical-align: top;
 }
 
 /* basket */
