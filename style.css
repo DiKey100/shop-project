@@ -64,7 +64,7 @@ body {
     font-size: 21px;
 }
 
-.list-a:hover {
+.list:hover .list-a {
     background-color: #2c71b8;
     color: white;
 }
@@ -172,4 +172,170 @@ body {
     position: absolute;
     top: 18px;
     right: 433px;
+}
+
+/* content */
+
+.con-pro {
+    margin-left: 15px;
+}
+
+.swipe {
+    height: 400px;
+    background-color: #235a93;
+    border-bottom: 1px white solid;
+}
+
+.content {
+    width: 1200px;
+    margin: auto;
+
+    display: flex;
+}
+
+.filter {
+    min-width: 269px;
+    height: 843px;
+    border-right: 1px white solid;
+    background-color: rgba(225, 225, 225, 0.25);
+    padding: 30px;
+}
+
+.road {
+    font-size: 14px;
+    color: rgba(225, 225, 225, 0.4);
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.sublite {
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+/* products */
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prod {
+    width: 268px;
+    height: 650px;
+    border: 1px rgba(225, 225, 225, 0.75) solid;
+    margin: 15px;
+    flex-direction: column;
+    color: white;
+}
+
+.prod a {
+    display: block;
+    height: 179px;
+    background-color: rgba(225, 225, 225, 0.75);
+    text-align: center;
+    line-height: 260px;
+    position: relative;
+}
+
+.full-screen::after, .heart::after{
+    content: "";
+    height: 30px;
+    width: 30px;
+    border: 1px #2c71b8 solid;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 10px;
+}
+
+.full-screen::after {
+    background-image: url(images/icon_8.png);
+    top: 10px;
+}
+
+.heart::after {
+    top: 50px;
+    background-image: url(images/icon_5.png);
+}
+
+.about {
+    margin: 15px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.text {
+    font-size: 21px;
+    margin: 10px 0px;
+    line-height: 26px;
+}
+.bold {
+    font-weight: bold;
+}
+
+.price {
+    margin: 15px 60px;
+}
+
+.big-number {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.small-number {
+    font-size: 21px;
+    font-weight: bold;
+    vertical-align: top;
+    line-height: 40px;
+}
+
+/* buttons */
+
+.more-details {
+    width: 210px;
+    height: 50px;
+    border: 1px white solid;
+    background-color: #2c71b8;
+    color: white;
+    margin: 15px 30px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    width: 210px;
+    height: 50px;
+    background-color: rgba(225, 225, 225, 0.25);
+    color: white;
+    margin: 0px 30px;
+    font-size: 21px;
+    font-weight: bold;
+    border: 1px rgba(225, 225, 225, 0.25) solid;
+    position: relative;
+}
+
+.add-to-cart::after {
+    background-image: url(images/icon_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    content: "";
+    display: block;
+    height: 17px;
+    width: 15px;
+    top: 15px;
+    right: 10px;
 }
