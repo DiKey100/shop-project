@@ -34,6 +34,19 @@ modal.addEventListener("click", function (e) {
   }
 });
 
-// slider
+// heart like
+let heartBtn = document.querySelectorAll(".heart");
+heartBtn.forEach((item) =>
+  item.addEventListener("click", function () {
+    item.classList.add("heart-like");
+  })
+);
 
-$(".slider-block").slick();
+// slider
+$(".slider-block").slick({
+  dots: true,
+  infinite: true,
+  speed: 400,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+});
