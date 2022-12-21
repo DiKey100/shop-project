@@ -38,6 +38,7 @@ modal.addEventListener("click", function (e) {
 let heartBtn = document.querySelectorAll(".heart");
 heartBtn.forEach((item) =>
   item.addEventListener("click", function () {
+    item.classList.remove("heart");
     item.classList.add("heart-like");
   })
 );
