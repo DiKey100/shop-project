@@ -33,7 +33,13 @@ modal.addEventListener("click", function (e) {
     closeModal();
   }
 });
-
+function showModalByScroll() {
+  if (window.scrollY > document.body.scrollHeight / 2) {
+    openModal();
+    window.removeEventListener("scroll", showModalByScroll);
+  }
+}
+window.addEventListener("scroll", showModalByScroll);
 // heart like
 let heartBtn = document.querySelectorAll(".heart");
 heartBtn.forEach((item) =>
