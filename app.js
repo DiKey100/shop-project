@@ -3,7 +3,6 @@ let addToCardBtns = document.querySelectorAll(".add-to-cart");
 
 // for (let i = 0; i < addToCardBtns.length; i++) {
 //   addToCardBtns[i].addEventListener("click", function () {
-//     console.log("clicked");
 //   });
 // }
 
@@ -34,18 +33,25 @@ modal.addEventListener("click", function (e) {
   }
 });
 function showModalByScroll() {
-  if (window.scrollY > document.body.scrollHeight / 2) {
+  if (window.scrollY >= document.body.scrollHeight / 2) {
     openModal();
     window.removeEventListener("scroll", showModalByScroll);
   }
 }
 window.addEventListener("scroll", showModalByScroll);
+
 // heart like
 let heartBtn = document.querySelectorAll(".heart");
 heartBtn.forEach((item) =>
   item.addEventListener("click", function () {
-    item.classList.remove("heart");
-    item.classList.add("heart-like");
+    if (item.classList.contains("heart")) {
+      item.classList.remove("heart");
+      item.classList.add("heart-like");
+    } else {
+      item.classList.remove("heart-like");
+      item.classList.add("heart");
+    }
+    // item.classList.toggle("heart-like");
   })
 );
 
@@ -53,7 +59,51 @@ heartBtn.forEach((item) =>
 $(".slider-block").slick({
   dots: true,
   infinite: true,
-  speed: 400,
+  speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
 });
+
+let incrementBtns = document.querySelectorAll(".increment-btn");
+let decrementBtns = document.querySelectorAll(".decrement-btn");
+let inputFields = document.querySelectorAll(".product-quantity input");
+
+class Counter {
+  constructor(incrementBtn, decrementBtn, inputField) {
+    this.domRefs = {
+      incrementBtn,
+      decrementBtn,
+      inputField,
+    };
+    this.toogleButtonState = function () {
+      let count = this.domRefs.inputField.value;
+      this.domRefs.decrementBtn.disabled = count <= 1;
+      this.domRefs.incrementBtn.disabled = count >= 10;
+    };
+    this.toogleButtonState();
+
+    this.increment = function () {
+      this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
+      this.toogleButtonState();
+    };
+    this.decrement = function () {
+      this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
+      this.toogleButtonState();
+    };
+
+    this.domRefs.incrementBtn.addEventListener(
+      "click",
+      this.increment.bind(this)
+    );
+    this.domRefs.decrementBtn.addEventListener(
+      "click",
+      this.decrement.bind(this)
+    );
+  }
+}
+
+const counter1 = new Counter(
+  incrementBtns[0],
+  decrementBtns[0],
+  inputFields[0]
+);
